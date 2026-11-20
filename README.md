@@ -47,3 +47,4 @@ The order matters: formats are standardized first, so the missing-value and dupl
 - `data_cleaning_pipeline.py`: the cleaning pipeline
 - `messy_sales.csv`: input (dirty)
 - `clean_sales.csv`: output (clean)
+- `image.png`: Terminal screenshot
