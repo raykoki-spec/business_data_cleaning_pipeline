@@ -13,10 +13,10 @@ def load(path):
     return df
 
 def clean_county(df):
-    # Step 1: lowercase everything to remove case differences
+
     df["county"] = df["county"].str.lower().str.strip()
 
-    # Step 2: fix known abbreviations
+
     county_fixes = {
         "nrb": "nairobi",
         "nkr": "nakuru",
@@ -26,7 +26,7 @@ def clean_county(df):
     }
     df["county"] = df["county"].replace(county_fixes)
 
-    # Step 3: proper case for display
+    
     df["county"] = df["county"].str.title()
     return df
 
@@ -37,7 +37,7 @@ def clean_customer(df):
 
   
 def clean_amount(df):
-      # Keep only digits and decimal point, then convert to float
+    
     df["amount_kes"] = (
         df["amount"]
         .str.replace(r"[^\d.]", "", regex=True)
@@ -54,7 +54,7 @@ def handle_missing_data(df):
     return df
 
 def remove_duplicates(df):
-    df = df.drop_duplicates()  # or subset=[..., "date"/"invoice_id"]
+    df = df.drop_duplicates()  
     return df
 
 def run_pipeline(path_in, path_out):
